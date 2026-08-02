@@ -34,6 +34,9 @@ jobs:
         with:
           role-to-assume: ${{ secrets.ROLE_TO_RESUME }}
           aws-region: ${{ secrets.AWS_REGION }}
+    
+      - name: Verify Role ARN
+        run: echo "${{ secrets.ROLE_TO_RESUME }}"
 
       - name: Terraform Init
         run: terraform init
