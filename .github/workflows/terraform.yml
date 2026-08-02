@@ -36,7 +36,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
     
       - name: Verify Role ARN
-        run: echo "${{ secrets.ROLE_TO_RESUME }}"
+        if: always()
+        run: |
+          echo "Role: ${{ secrets.ROLE_TO_RESUME }}"
 
       - name: Terraform Init
         run: terraform init
