@@ -8,6 +8,4 @@ resource "aws_iam_user_policy_attachment" "admin_access" {
 resource "aws_iam_user_login_profile" "chika_admin_login" {
   user                    = aws_iam_user.raw_data_playground_user.name
   password_reset_required = true
-
-  password = "chika1234567890"
 }
